@@ -1,0 +1,36 @@
+﻿<Window x:Class="Elektro_Bud0.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Elektro_Bud0"
+        mc:Ignorable="d"
+        Title="Elektro-Bud - Sklep" Height="500" Width="800">
+    <!-- Glowna siatka -->
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+    <!-- Nagłówek okna-->
+        <TextBlock Text="Lista produktów w magazynie" 
+                   FontSize="18" 
+                   FontWeight="Bold" 
+                   Margin="0,0,0,10"/>
+    <!-- To dziala do wyswietlenia listy produktów -->
+        <ListView x:Name="lvProducts" Grid.Row="1">
+            <!-- Definicja listy-->
+            <ListView.View>
+                <GridView>
+                    <!-- Columny tabeli gdzie pokazywane sa dane "Id" "Nazwa" "Kategoria" "Ilość" "Cena" -->
+                    <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Id}" Width="50"/>
+                    <GridViewColumn Header="Nazwa" DisplayMemberBinding="{Binding Nazwa}" Width="250"/>
+                    <GridViewColumn Header="Kategoria" DisplayMemberBinding="{Binding Kategoria}" Width="150"/>
+                    <GridViewColumn Header="Ilość" DisplayMemberBinding="{Binding Ilosc}" Width="80"/>
+                    <GridViewColumn Header="Cena (PLN)" DisplayMemberBinding="{Binding Cena}" Width="100"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        
+    </Grid>
+</Window>
